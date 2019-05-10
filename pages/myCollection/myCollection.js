@@ -27,7 +27,7 @@ Page({
   getMyPage: function () {
     var page = this.data.page
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=likes&a=likesList&page=" + page + "&page_size=10",
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=likes&a=likesList&page=" + page + "&page_size=10",
       header: {
         "Content-Type": "application/json",
         Cookie: wx.getStorageSync("session")
@@ -62,7 +62,7 @@ Page({
       success: res => {
         if (res.confirm) {
           wx.request({
-            url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=likes&a=dislike",
+            url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=likes&a=dislike",
             method: "POST",
             header: {
               "content-type": "application/x-www-form-urlencoded",
@@ -113,7 +113,7 @@ Page({
       page: page
     });
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=likes&a=likesList&page=" + page + "&page_size=10",
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=likes&a=likesList&page=" + page + "&page_size=10",
       header: {
         "Content-Type": "application/json",
         Cookie: wx.getStorageSync("session")

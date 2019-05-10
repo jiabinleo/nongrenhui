@@ -105,7 +105,7 @@ Page({
   },
   loginFn: function(code, encryptedData, iv) {
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=user&a=login",
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=user&a=login",
       method: "POST",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
@@ -147,7 +147,7 @@ Page({
   },
   bindReleaseTap: function() {
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=likes&a=likesList",
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=likes&a=likesList",
       header: {
         "Content-Type": "application/json",
         Cookie: wx.getStorageSync("session")
@@ -176,7 +176,7 @@ Page({
   },
   bindCollectionTap: function() {
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=likes&a=likesList",
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=likes&a=likesList",
       header: {
         "Content-Type": "application/json",
         Cookie: wx.getStorageSync("session")
@@ -215,7 +215,7 @@ Page({
   },
   loginTest: function() {
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=likes&a=likesList",
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=likes&a=likesList",
       method: "GET",
       header: {
         "Content-Type": "application/json",
@@ -236,7 +236,7 @@ Page({
       mask: "mask-close"
     });
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=user&a=blackStatus",
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=user&a=blackStatus",
       method: "GET",
       header: {
         "Content-Type": "application/json",

@@ -59,7 +59,7 @@ Page({
       dq: false,
     });
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=cat&a=catList",
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=cat&a=catList",
       header: {
         "Content-Type": "application/json"
       },
@@ -88,7 +88,7 @@ Page({
     });
     if (this.data.dq) {
       wx.request({
-        url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=area&a=areaList&parent_code=100000",
+        url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=area&a=areaList&parent_code=100000",
         header: {
           "Content-Type": "application/json"
         },
@@ -123,7 +123,7 @@ Page({
     if (this.data.fl) {
       if (e.target.dataset.code) {
         wx.request({
-          url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=cat&a=catList&parent_code=" +
+          url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=cat&a=catList&parent_code=" +
             e.target.dataset.code,
           header: {
             "Content-Type": "application/json"
@@ -177,7 +177,7 @@ Page({
     } else if (this.data.dq) {
       if (e.target.dataset.code) {
         wx.request({
-          url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=area&a=areaList&parent_code=" +
+          url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=area&a=areaList&parent_code=" +
             e.target.dataset.code,
           header: {
             "Content-Type": "application/json"
@@ -229,7 +229,7 @@ Page({
           return
         }
         wx.request({
-          url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=cat&a=catList&parent_code=" +
+          url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=cat&a=catList&parent_code=" +
             e.target.dataset.code,
           header: {
             "Content-Type": "application/json"
@@ -270,7 +270,7 @@ Page({
           return
         }
         wx.request({
-          url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=area&a=areaList&parent_code=" +
+          url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=area&a=areaList&parent_code=" +
             e.target.dataset.code,
           header: {
             "Content-Type": "application/json"
@@ -394,7 +394,7 @@ Page({
           upfileWx: fileWx
         });
         wx.uploadFile({
-          url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=upload&a=getOssResult",
+          url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=upload&a=getOssResult",
           filePath: tempFilePaths[0],
           name: "file",
           header: {
@@ -417,7 +417,7 @@ Page({
   },
   getLatLon: function (areaCode) {
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=area&a=getCoorbyCityCode&area_code=" + areaCode,
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=area&a=getCoorbyCityCode&area_code=" + areaCode,
       header: {
         "Content-Type": "application/json"
       },
@@ -508,7 +508,7 @@ Page({
     } else {
       data['pic_json'] = JSON.stringify(data['pic_json'])
       wx.request({
-        url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=demand&a=addDemand",
+        url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=demand&a=addDemand",
         method: "POST",
         header: {
           "Content-Type": "application/x-www-form-urlencoded",

@@ -30,7 +30,7 @@ Page({
   getMyPage: function () {
     var data = this.data.pageData
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=" + data.c + "&a=" + data.a + "&page=" + data.pageNum + "&page_size=" + data.pageSize,
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=" + data.c + "&a=" + data.a + "&page=" + data.pageNum + "&page_size=" + data.pageSize,
       header: {
         "Content-Type": "application/json",
         Cookie: wx.getStorageSync("session")
@@ -53,7 +53,7 @@ Page({
       pageData: pageData
     })
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=" + pageData.c + "&a=" + pageData.a + "&page=" + pageData.pageNum + "&page_size=" + pageData.pageSize,
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=" + pageData.c + "&a=" + pageData.a + "&page=" + pageData.pageNum + "&page_size=" + pageData.pageSize,
       header: {
         "Content-Type": "application/json",
         Cookie: wx.getStorageSync("session")
@@ -98,7 +98,7 @@ Page({
       success: res => {
         if (res.confirm) {
           wx.request({
-            url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=" + c + "&a=" + a,
+            url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=" + c + "&a=" + a,
             method: "POST",
             header: {
               "Content-Type": "application/x-www-form-urlencoded",
@@ -147,7 +147,7 @@ Page({
   },
   onTouch: function (e) {
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=user&a=blackStatus",
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=user&a=blackStatus",
       method: "GET",
       header: {
         "Content-Type": "application/json",
@@ -214,7 +214,7 @@ Page({
       success(result) {
         if (result.confirm) {
           wx.request({
-            url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=" + c + "&a=setFinish",
+            url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=" + c + "&a=setFinish",
             method: "POST",
             header: {
               "Content-Type": "application/x-www-form-urlencoded",

@@ -43,7 +43,7 @@ Page({
       });
     }
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=" + optionsC + "&a=" + optionsC + "Detail&" + optionsC + "_id=" + optionsId,
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=" + optionsC + "&a=" + optionsC + "Detail&" + optionsC + "_id=" + optionsId,
       header: {
         "Content-Type": "application/json",
         Cookie: wx.getStorageSync("session")
@@ -99,7 +99,7 @@ Page({
     if (wx.getStorageSync("session")) {
       if (e.currentTarget.dataset['is_like'] == 0) {
         wx.request({
-          url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=likes&a=toLike",
+          url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=likes&a=toLike",
           method: "POST",
           header: {
             "content-type": "application/x-www-form-urlencoded",
@@ -121,7 +121,7 @@ Page({
         });
       } else {
         wx.request({
-          url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=likes&a=dislike",
+          url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=likes&a=dislike",
           method: "POST",
           header: {
             "content-type": "application/x-www-form-urlencoded",

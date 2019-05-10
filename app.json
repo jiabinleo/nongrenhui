@@ -14,11 +14,11 @@
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#1D9FE2",
-    "navigationBarTitleText": "供求市场",
+    "navigationBarBackgroundColor": "#ffc43d",
+    "navigationBarTitleText": "农人汇",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true,
-    "backgroundColor": "#1D9FE2"
+    "backgroundColor": "#ffc43d"
   },
   "permission": {
     "scope.userLocation": {

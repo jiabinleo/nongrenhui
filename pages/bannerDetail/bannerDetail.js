@@ -17,7 +17,7 @@ Page({
    */
   onLoad: function(options) {
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=news&a=newsDetail&id=" + options.id,
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=news&a=newsDetail&id=" + options.id,
       header: {
         "Content-Type": "application/json"
       },

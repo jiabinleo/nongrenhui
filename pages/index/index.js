@@ -75,7 +75,7 @@ Page({
       });
     }
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=banner&a=bannerList",
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=banner&a=bannerList",
       header: {
         "Content-Type": "application/json"
       },
@@ -158,7 +158,7 @@ Page({
     console.log(this.data.fl)
     if (this.data.fl) {
       wx.request({
-        url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=cat&a=catList",
+        url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=cat&a=catList",
         header: {
           "Content-Type": "application/json"
         },
@@ -202,7 +202,7 @@ Page({
     console.log(this.data.dq)
     if (this.data.dq) {
       wx.request({
-        url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=area&a=areaList&parent_code=100000",
+        url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=area&a=areaList&parent_code=100000",
         header: {
           "Content-Type": "application/json"
         },
@@ -280,7 +280,7 @@ Page({
     if (this.data.fl) {
       if (e.target.dataset.code) {
         wx.request({
-          url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=cat&a=catList&parent_code=" +
+          url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=cat&a=catList&parent_code=" +
             e.target.dataset.code,
           header: {
             "Content-Type": "application/json"
@@ -342,7 +342,7 @@ Page({
     } else if (this.data.dq) {
       if (e.target.dataset.code) {
         wx.request({
-          url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=area&a=areaList&parent_code=" +
+          url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=area&a=areaList&parent_code=" +
             e.target.dataset.code,
           header: {
             "Content-Type": "application/json"
@@ -405,7 +405,7 @@ Page({
           return
         }
         wx.request({
-          url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=cat&a=catList&parent_code=" +
+          url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=cat&a=catList&parent_code=" +
             e.target.dataset.code,
           header: {
             "Content-Type": "application/json"
@@ -469,7 +469,7 @@ Page({
           return
         }
         wx.request({
-          url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=area&a=areaList&parent_code=" +
+          url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=area&a=areaList&parent_code=" +
             e.target.dataset.code,
           header: {
             "Content-Type": "application/json"
@@ -566,7 +566,7 @@ Page({
   },
   loadCity: function(latitude, longitude) {
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=area&a=getNearLocationCode&lat=" + latitude + "&lng=" + longitude,
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=area&a=getNearLocationCode&lat=" + latitude + "&lng=" + longitude,
       header: {
         "Content-Type": "application/json"
       },
@@ -597,7 +597,7 @@ Page({
       title: "加载中"
     });
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=" +
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=" +
         data.c +
         "&a=" +
         data.a +
@@ -647,7 +647,7 @@ Page({
     var icon = null;
     var fileList = null;
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=" +
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=" +
         data.c +
         "&a=" +
         data.a +
@@ -754,7 +754,7 @@ Page({
       mask: "mask-close"
     });
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=user&a=blackStatus",
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=user&a=blackStatus",
       method: "GET",
       header: {
         "Content-Type": "application/json",
@@ -819,7 +819,7 @@ Page({
       console.log(e.currentTarget.dataset['is_like'])
       if (e.currentTarget.dataset['is_like'] == 0) {
         wx.request({
-          url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=likes&a=toLike",
+          url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=likes&a=toLike",
           method: "POST",
           header: {
             "content-type": "application/x-www-form-urlencoded",
@@ -843,7 +843,7 @@ Page({
         });
       } else {
         wx.request({
-          url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=likes&a=dislike",
+          url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=likes&a=dislike",
           method: "POST",
           header: {
             "content-type": "application/x-www-form-urlencoded",
@@ -903,7 +903,7 @@ Page({
   },
   loginFn: function(code, encryptedData, iv) {
     wx.request({
-      url: "https://wxapi.nongrenhui.com/nongren_api/index.php?c=user&a=login",
+      url: "https://wxapi.nongrenhui.com/nongren_api/index2.php?c=user&a=login",
       method: "POST",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
