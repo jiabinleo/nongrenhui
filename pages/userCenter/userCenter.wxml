@@ -1,0 +1,44 @@
+<view class="myCenter">
+  <view class="userBg">
+    <block>
+      <button hidden="{{hasUser && canIUse}}" class='getUserInfo' open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+      <image lazy-load="true" wx:if="{{!hasUser && canIUse}}" src="{{nologinImg}}" mode="widthFix"></image>
+      <image lazy-load="true" wx:else src="{{user.avatar}}" mode="widthFix"></image>
+      <view>
+        <text wx:if="{{!hasUser && canIUse}}">请登录</text>
+        <text wx:else>尊敬的用户 : {{user.nickname}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="list">
+    <view class="v-wrap" bindtap='bindReleaseTap'>
+      <view class="v-list">
+        <image lazy-load="true" class="bf" src="../../images/fb1.png" mode="widthFix"></image>
+        <text>我的发布</text>
+        <image lazy-load="true" class="af" src="../../images/right.svg" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="v-wrap" bindtap='bindCollectionTap'>
+      <view class="v-list">
+        <image lazy-load="true" class="bf" src="../../images/sc_pre.png" mode="widthFix"></image>
+        <text>我的收藏</text>
+        <image lazy-load="true" class="af" src="../../images/right.svg" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<import src="../../template/footer/footer.wxml"></import>
+<template is="footer" data="{{...item}}" />
+<include src="../../template/fb/fb.wxml"></include>
+<block>
+  <view class="{{loginMask}}" catchtouchmove="preventTouchMove">
+    <view class="inner">
+      <view class='title'>请先登录</view>
+      <view class="detial">该功能需要登录才能使用</view>
+      <view class='btn'>
+        <button bindtap='hideMask'>取消</button>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">去登录</button>
+      </view>
+    </view>
+  </view>
+</block>

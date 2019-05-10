@@ -1,0 +1,84 @@
+<view class="wrap">
+  <view class="userMsg">
+    <view class="userImg">
+      <image lazy-load="true" src="{{marketSupply['user_info']['user_avatar']}}" mode="widthFix"></image>
+    </view>
+    <view class="username">
+      <view class="name">
+        <view class="namel">{{marketSupply.userName?marketSupply.userName:'悦农通'}}</view>
+        <view class="time">{{publishTime}}</view>
+      </view>
+      <view class="address">
+        <text>{{marketSupply.area}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="title">
+    <text>{{marketSupply.title}}</text>
+  </view>
+  <view class="detail">
+    <text>{{marketSupply.content}}</text>
+  </view>
+  <view class='table'>
+    <view>
+      <text class="left">所在区域</text>
+      <text class="right">{{marketSupply.area}}</text>
+    </view>
+    <view>
+      <text class="left">求购类型</text>
+      <text class="right">{{marketSupply['cat_name']}}</text>
+    </view>
+    <view>
+      <text class="left">求购总量</text>
+      <text class="right">{{marketSupply['total_counts']}}斤</text>
+    </view>
+    <view>
+      <text class="left">起购量</text>
+      <text class="right">{{marketSupply['start_counts']}}斤</text>
+    </view>
+    <view>
+      <text class="left">求购价格</text>
+      <text class="right priceYellow">{{marketSupply.price}}{{priceDW}}</text>
+    </view>
+    <view>
+      <text class="left">联系人</text>
+      <text class="right">{{marketSupply.contact}}</text>
+    </view>
+    <view>
+      <text class="left">联系电话</text>
+      <text class="right">{{marketSupply.cellphone}}</text>
+    </view>
+    <view>
+      <text class="left">购货截止日期</text>
+      <text class="right">{{supplyTime}}</text>
+    </view>
+  </view>
+  <view class="imgFile">
+    <block wx:for="{{fileList}}" wx:key="index">
+      <image bindtap='ylImg' lazy-load="true" data-index="{{index}}" src="{{item}}" mode="aspectFill"></image>
+    </block>
+  </view>
+  <view class='bottom'>
+    <view class='left' bindtap="tel">
+      <image lazy-load="true" src="../../images/7a4e3f53f3722f2b0694cc83653945d.png" mode="widthFix"></image>
+      <text>联系求购方</text>
+    </view>
+    <view class='left' data-id="{{marketSupply['supply_id']}}" data-is_like="{{marketSupply['is_like']}}" bindtap='shouCang'>
+      <image lazy-load="true" wx:if="{{marketSupply['is_like']}}" src="../../images/sc_pre.png" mode="widthFix"></image>
+      <image lazy-load="true" wx:else src="../../images/sc.png" mode="widthFix"></image>
+      <text>收藏</text>
+    </view>
+  </view>
+</view>
+<block>
+  <view class="{{loginMask}}" catchtouchmove="preventTouchMove">
+    <view class="inner">
+      <view class='title'>请先登录</view>
+      <view class="detial">该功能需要登录才能使用</view>
+      <view class='btn'>
+        <button bindtap='hideMask'>取消</button>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">去登录</button>
+      </view>
+    </view>
+  </view>
+</block>

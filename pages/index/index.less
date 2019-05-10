@@ -1,0 +1,402 @@
+/**index.wxss**/
+@import "../../template/footer/footer.less";
+@import "../../template/fb/fb.less";
+.container {
+  background: #ffffff;
+}
+
+.page-section {
+  width: 100%;
+
+  .swiper-item {
+    image {
+      width: 750rpx;
+      height: 300rpx;
+    }
+  }
+}
+
+.page-section-spacing {
+  box-sizing: border-box;
+
+  image {
+    width: 100%;
+  }
+}
+
+.content {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transition: 500;
+
+  .nav {
+    background: #ffc43d;
+    color: #eeeeee;
+    height: 123rpx;
+    line-height: 123rpx;
+
+    .navb {
+      border-bottom: solid 4rpx #ffffff;
+      color: #ffffff;
+    }
+
+    .nava {
+      color: #ffffff;
+    }
+  }
+
+  .select {
+    background: #ffffff;
+  }
+}
+
+.newListFixed {
+  &:nth-of-type(3) {
+    margin-top: 226rpx !important;
+  }
+}
+
+/*导航*/
+.container {
+  .nav {
+    position: relative;
+
+    view {
+      display: inline-block;
+      width: 49.5%;
+      border-radius: 0;
+      text-align: center;
+      font-size: 28rpx;
+      line-height: 82rpx;
+    }
+
+    .navLine {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 0rpx;
+      height: 30rpx;
+      border-right: solid 1rpx #d3d3d3;
+    }
+  }
+}
+
+.select {
+  width: 100%;
+  border-bottom: solid #eeeeee 1rpx;
+  view {
+    display: inline-block;
+    width: 33.3%;
+    text-align: center;
+    font-size: 28rpx;
+    line-height: 82rpx;
+
+    image {
+      width: 16rpx;
+      height: 16rpx;
+      vertical-align: middle;
+      margin-top: -4rpx;
+    }
+
+    &.navAct {
+      color: #ffc43d;
+    }
+  }
+}
+
+.navA {
+  color: #ffc43d;
+
+  .navb {
+    border-bottom: solid #ffc43d 4rpx;
+    display: inline-block;
+    line-height: 80rpx;
+    padding: 0 6rpx;
+  }
+}
+
+.section-wrap {
+  height: 0;
+  width: 100%;
+  position: relative;
+
+  .section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #eeeeee;
+    z-index: 100%;
+    width: 100%;
+    overflow: hidden;
+    // padding: 10rpx 0;
+
+    scroll-view {
+      display: inline-block;
+      width: 33%;
+      text-align: center;
+      font-size: 28rpx;
+      padding: 10rpx 0;
+
+      view {
+        line-height: 50rpx;
+        margin: 0 50rpx;
+
+        &.active {
+          color: #ffc43d;
+          border-bottom: solid 1rpx #ffc43d;
+        }
+      }
+    }
+  }
+}
+
+.newList {
+  padding: 0 35rpx;
+  margin-top: 20rpx;
+  background: #ffffff;
+
+  &:last-of-type {
+    .rddz {
+      border: none;
+    }
+  }
+
+  .flagStatus {
+    float: right;
+    margin-top: -12rpx;
+    width: 100rpx;
+    height: 100rpx;
+  }
+
+  &:last-of-type {
+    padding-bottom: 140rpx;
+  }
+
+  .userMsg {
+    overflow: hidden;
+
+    .userImg {
+      float: left;
+
+      image {
+        width: 80rpx;
+        height: 80rpx;
+        border-radius: 10rpx;
+      }
+    }
+
+    .username {
+      margin-top: -4rpx;
+      float: left;
+      margin-left: 16rpx;
+      width: 470rpx;
+
+      .name {
+        overflow: hidden;
+        font-size: 30rpx;
+
+        .namel {
+          float: left;
+        }
+      }
+
+      .address {
+        margin-top: -8rpx;
+
+        text {
+          font-size: 16rpx;
+          background: #ffc43d;
+          color: #000000;
+          padding: 4rpx;
+          border-radius: 20rpx;
+        }
+      }
+    }
+  }
+
+  .title {
+    font-size: 30rpx;
+    color: #666666;
+    line-height: 36rpx;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    align-content: center;
+    height: 40rpx;
+  }
+
+  .detail {
+    font-size: 30rpx;
+    color: #999999;
+    line-height: 38rpx;
+
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    align-content: center;
+    height: 74rpx;
+  }
+
+  .imgFile {
+    margin-top: 5rpx;
+
+    image {
+      width: 220rpx;
+      height: 146rpx;
+      margin-left: 10rpx;
+      margin-top: 10rpx;
+      border-radius: 10rpx;
+
+      &:nth-of-type(3n + 1) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .rddz {
+    overflow: hidden;
+    padding-bottom: 14rpx;
+    border-bottom: solid 1rpx #eeeeee;
+
+    text {
+      font-size: 24rpx;
+      color: #999999;
+    }
+
+    .rd {
+      float: right;
+      margin-right: 20rpx;
+
+      image {
+        vertical-align: middle;
+        width: 36rpx;
+        height: 20rpx;
+      }
+    }
+
+    .time {
+      float: left;
+      font-size: 26rpx;
+      color: #999999;
+    }
+
+    .dz {
+      float: right;
+
+      image {
+        width: 30rpx;
+        height: 26rpx;
+        vertical-align: -4rpx;
+      }
+    }
+  }
+}
+
+
+
+.loginMask-close {
+  display: none;
+}
+
+.loginMask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .inner {
+    margin: 0 auto;
+    width: 600rpx;
+    background: #ffffff;
+    position: absolute;
+    z-index: 999;
+    top: 40%;
+    left: 75rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+
+    .title {
+      text-align: center;
+      color: #333333;
+      padding: 40rpx 0 20rpx;
+      font-size: 30rpx;
+    }
+
+    .detial {
+      text-align: center;
+      padding: 30rpx 0 50rpx;
+      color: #666666;
+      font-size: 28rpx;
+    }
+
+    .btn {
+      overflow: hidden;
+
+      button {
+        width: 300rpx;
+        float: left;
+        padding: 0;
+        border: none;
+
+        &::after {
+          border: none;
+          background-color: none;
+        }
+
+        &:last-of-type {
+          &::after {
+            content: "去登录";
+            font-size: 68rpx;
+            border: none;
+            background-color: #ffc43d;
+            color: #ffffff;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.top {
+  position: fixed;
+  right: 20rpx;
+  bottom: 200rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 2rpx 4rpx #eeeeee;
+
+  image {
+    position: absolute;
+    left: 50%;
+    top: 18rpx;
+    transform: translate(-50%, -50%);
+    width: 36rpx;
+  }
+
+  view {
+    font-size: 24rpx;
+    margin-top: 34rpx;
+    text-align: center;
+    color: #8a8a8a;
+  }
+}
+
+.topHide {
+  display: none;
+}

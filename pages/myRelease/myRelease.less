@@ -1,0 +1,170 @@
+/* pages/myRelease/myRelease.wxss */
+.menu {
+    height: 80rpx;
+    width: 100%;
+    border-bottom: solid 1rpx #eeeeee;
+    padding: 0 35rpx;
+
+    view {
+        float: left;
+        width: 340rpx;
+        text-align: center;
+
+        &.btn {
+            text {
+                color: #ffc43d;
+                border-bottom: solid 2rpx #ffc43d;
+            }
+
+        }
+
+        text {
+            display: inline-block;
+            font-size: 30rpx;
+            color: #999999;
+            line-height: 80rpx;
+
+        }
+    }
+}
+
+.list-wrap {
+    padding: 0 35rpx;
+    font-size: 22rpx;
+
+    .list {
+        position: relative;
+        padding: 18rpx 0rpx;
+        overflow: hidden;
+        height: 150rpx;
+        margin-top: 4rpx;
+        // border-radius: 10rpx;
+        border-bottom: solid #eeeeee 1rpx;
+
+        .listMask {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            top: 0;
+            z-index: 20;
+            background: rgba(0, 0, 0, 0);
+        }
+
+        .over {
+            position: absolute;
+            right: 0rpx;
+            top: 0rpx;
+            z-index: 30;
+            width: 80rpx;
+        }
+
+        .overHide {
+            display: none;
+        }
+
+        .left {
+            float: left;
+            width: 220rpx;
+
+            image {
+                width: 220rpx;
+                height: 146rpx;
+                border-radius: 10rpx;
+            }
+        }
+
+        .center {
+            width: 315rpx;
+            margin-left: 16rpx;
+            float: left;
+            margin-right: 12rpx;
+
+            .title {
+                text-overflow: -o-ellipsis-lastline;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                align-content: center;
+                height: 40rpx;
+                line-height: 40rpx;
+                font-size: 30rpx;
+                color: #333333;
+            }
+
+            .detail {
+                padding: 10rpx 0;
+                font-size: 26rpx;
+                text-overflow: -o-ellipsis-lastline;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                line-height: 36rpx;
+                -webkit-box-orient: vertical;
+                align-content: center;
+                height: 60rpx;
+                color: #666666;
+            }
+
+            .areaTime {
+                padding-top: 4rpx;
+                font-size: 20rpx;
+
+                text {
+                    color: #999999;
+
+                    &:last-of-type {
+                        padding-left: 10rpx;
+                    }
+                }
+            }
+        }
+
+        .top {
+            position: absolute;
+            right: 0rpx;
+            top: 14rpx;
+            z-index: 10;
+            width: 88rpx;
+            height: 75rpx;
+            text-align: center;
+
+            image {
+                width: 40rpx;
+                opacity: 0.5;
+            }
+
+            text {
+                display: block;
+                font-size: 22rpx;
+                color: #666666;
+                margin-top: -10rpx;
+            }
+        }
+
+        .bottom {
+            position: absolute;
+            right: 0rpx;
+            z-index: 30;
+            bottom: 12rpx;
+            width: 88rpx;
+            height: 75rpx;
+            text-align: center;
+
+            image {
+                width: 40rpx;
+            }
+
+            text {
+                display: block;
+                font-size: 22rpx;
+                color: #666666;
+                // font-weight: 600;
+                margin-top: -6rpx;
+            }
+        }
+    }
+}

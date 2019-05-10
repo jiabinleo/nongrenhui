@@ -1,0 +1,23 @@
+<template name="footer">
+  <view class='footer'>
+    <image class="bottom-bg" src="../../images/bottom.png" mode='widthFix'></image>
+    <view class="nav">
+      <navigator url='{{homeUrl}}' open-type="redirect" hover-class="none">
+        <image src="{{indexImg}}"></image>
+        <text>首页</text>
+      </navigator>
+    </view>
+    <view class="nav" bindtap="open">
+      <image src="../../images/tab_more_btn_add.png"></image>
+      <text>发布</text>
+    </view>
+    <view class="nav">
+      <navigator url='{{userCenterUrl}}' open-type="redirect" hover-class="none">
+        <image src="{{myImg}}"></image>
+        <text>我的</text>
+      </navigator>
+    </view>
+  </view>
+</template>
+<template>
+</template>

@@ -1,0 +1,173 @@
+/* pages/userCenter/userCenter.wxss */
+@import '../../template/footer/footer.less';
+.myCenter {
+    padding: 30rpx 35rpx;
+
+    .userBg {
+        position: relative;
+        text-align: center;
+        width: 680rpx;
+        height: 256rpx;
+        border-radius: 5px;
+        background: #feca52;
+        box-shadow: 0px 5px 13px 2px rgba(255, 200, 50, 0.3);
+        button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 680rpx;
+            z-index: 100;
+        height: 256rpx;
+        background: #feca52;
+        background: transparent;
+        border: none;
+        &::after {
+            border: none;
+          }
+        }
+
+        image {
+            position: absolute;
+            left: 50%;
+            top: 40rpx;
+            z-index: 80;
+            transform: translateX(-50%);
+            width: 120rpx;
+            height: 120rpx;
+            border-radius: 50%;
+            border: 6rpx solid #ffffff;
+            background: #ffffff;
+        }
+
+        text {
+            position: absolute;
+            left: 50%;
+            top: 180rpx;
+            z-index: 80;
+            transform: translateX(-50%);
+            font-size: 30rpx;
+            color: #ffffff;
+            line-height: 60rpx;
+        }
+    }
+
+    .list {
+        margin-top: 30rpx;
+        border-radius: 10rpx;
+        width: 680rpx;
+        overflow: hidden;
+        box-shadow: 0rpx 2rpx 4rpx 1rpx #eeeeee;
+
+        .v-wrap {
+            background: #ffffff;
+            overflow: hidden;
+            height: 120rpx;
+            line-height: 120rpx;
+            padding: 0 35rpx;
+            margin-top: 0rpx;
+
+            &:first-of-type {
+                .v-list {
+                    border: none;
+                }
+            }
+
+            .v-list {
+                border-top: solid 1rpx #eeeeee;
+
+                text {
+                    font-size: 34rpx;
+                    color: #333333;
+
+                }
+
+                image {
+                    margin-top: 42rpx;
+                    margin-right: 15rpx;
+
+                    &.bf {
+                        width: 40rpx;
+                        height: 40rpx;
+                        float: left;
+                    }
+
+                    &.af {
+                        float: right;
+                        width: 32rpx;
+                        height: 32rpx;
+                        margin-top: 46rpx;
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+.loginMask-close {
+    display: none;
+}
+
+.loginMask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .inner {
+        margin: 0 auto;
+        width: 600rpx;
+        background: #ffffff;
+        position: absolute;
+        z-index: 999;
+        top: 40%;
+        left: 75rpx;
+        border-radius: 10rpx;
+        overflow: hidden;
+
+        .title {
+            text-align: center;
+            color: #333333;
+            padding: 40rpx 0 20rpx;
+            font-size: 30rpx;
+        }
+
+        .detial {
+            text-align: center;
+            padding: 30rpx 0 50rpx;
+            color: #666666;
+            font-size: 28rpx;
+        }
+
+        .btn {
+            overflow: hidden;
+
+            button {
+                width: 300rpx;
+                float: left;
+                padding: 0;
+                border: none;
+
+                &::after {
+                    border: none;
+                    background-color: none;
+                }
+
+                &:last-of-type {
+                    &::after {
+                        content: "去登录";
+                        font-size: 68rpx;
+                        border: none;
+                        background-color: #ffc43d;
+                        color: #ffffff;
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
+    }
+}

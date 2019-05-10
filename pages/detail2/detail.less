@@ -1,0 +1,201 @@
+.wrap {
+    padding: 35rpx;
+
+    .userMsg {
+        overflow: hidden;
+
+        .userImg {
+            float: left;
+
+            image {
+                width: 80rpx;
+                height: 80rpx;
+                border-radius: 10rpx;
+            }
+        }
+
+        .username {
+            margin-top: -4rpx;
+            float: left;
+            margin-left: 16rpx;
+            width: 584rpx;
+
+            .name {
+                overflow: hidden;
+                font-size: 30rpx;
+
+                .namel {
+                    float: left;
+                }
+
+                .time {
+                    float: right;
+                    font-size: 24rpx;
+                    color: #999999;
+                }
+            }
+
+            .address {
+                margin-top: -8rpx;
+
+                text {
+                    font-size: 16rpx;
+                    background: #ffc43d;
+                    color: #000000;
+                    padding: 4rpx;
+                    border-radius: 20rpx;
+                }
+            }
+        }
+    }
+
+    .title {
+        font-size: 28rpx;
+        color: #666666;
+        line-height: 60rpx;
+    }
+
+    .detail {
+        font-size: 28rpx;
+        color: #999999;
+        line-height: 40rpx;
+    }
+
+    .table {
+        font-size: 28rpx;
+        color: #999999;
+        line-height: 80rpx;
+
+        view {
+            overflow: hidden;
+            border-bottom: solid 1rpx #eeeeee;
+
+            .left {
+                float: left;
+            }
+
+            .right {
+                float: right;
+                &.priceYellow{
+                    color: #ffc43d;
+                }
+            }
+        }
+    }
+
+    .imgFile {
+        margin-top: 20rpx;
+
+        image {
+            width: 330rpx;
+            height: 214rpx;
+            margin-top: 10rpx;
+            border-radius: 10rpx;
+
+            &:nth-of-type(2n) {
+                margin-left: 20rpx;
+            }
+        }
+    }
+
+    .bottom {
+        margin-top: 30rpx;
+        overflow: hidden;
+        height: 92rpx;
+        border-top: 1rpx solid #d3d3d3;
+
+        text {
+            font-size: 28rpx;
+            color: #999999;
+        }
+
+        .left {
+            float: left;
+            width: 49%;
+            height: 52rpx;
+            line-height: 52rpx;
+            margin: 20rpx 0;
+            text-align: center;
+
+            &:first-of-type {
+                border-right: solid 1rpx #d3d3d3;
+            }
+
+            image {
+                width: 48rpx;
+                height: 48rpx;
+                vertical-align: middle;
+                margin-right: 10rpx;
+                margin-top: -10rpx;
+            }
+        }
+    }
+}
+
+.loginMask-close {
+    display: none;
+}
+
+.loginMask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .inner {
+        margin: 0 auto;
+        width: 600rpx;
+        background: #ffffff;
+        position: absolute;
+        z-index: 999;
+        top: 40%;
+        left: 75rpx;
+        border-radius: 10rpx;
+        overflow: hidden;
+
+        .title {
+            text-align: center;
+            color: #333333;
+            padding: 40rpx 0 20rpx;
+            font-size: 30rpx;
+        }
+
+        .detial {
+            text-align: center;
+            padding: 30rpx 0 50rpx;
+            color: #666666;
+            font-size: 28rpx;
+        }
+
+        .btn {
+            overflow: hidden;
+
+            button {
+                width: 300rpx;
+                float: left;
+                padding: 0;
+                border: none;
+
+                &::after {
+                    border: none;
+                    background-color: none;
+                }
+
+                &:last-of-type {
+                    &::after {
+                        content: "去登录";
+                        font-size: 68rpx;
+                        border: none;
+                        background-color: #ffc43d;
+                        color: #ffffff;
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
+    }
+}

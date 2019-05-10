@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/supply/supply",
+    "pages/myRelease/myRelease",
+    "pages/userCenter/userCenter",
+    "pages/mySupply/mySupply",
+    "pages/myCollection/myCollection",
+    "pages/detail/detail",
+    "pages/detail2/detail",
+    "pages/bannerDetail/bannerDetail",
+    "pages/buy/buy",
+    "pages/myBuy/myBuy"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#1D9FE2",
+    "navigationBarTitleText": "供求市场",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#1D9FE2"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

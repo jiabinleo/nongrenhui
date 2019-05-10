@@ -1,0 +1,103 @@
+<view class="wrap">
+  <view>
+    <text>标题</text>
+    <textarea maxlength="28" class="l-t-title" bindblur="bindTextAreaBlur" value='{{title}}' bindinput="titleFn" auto-height placeholder-class="sr" placeholder="请输入" />
+    <image class='right' src="../../images/right.svg"></image>
+  </view>
+  <view>
+    <text>供应类型</text>
+    <view class="sr" bindtap="fenlei">{{type}}</view>
+    <image class='right' src="../../images/right.svg"></image>
+  </view>
+  <view>
+    <text>供应区域</text>
+    <image lazy-load="true" class='loc' bindtap='locFn' src="../../images/loc.svg" mode="widthFix"></image>
+    <view class="sr" bindtap="diqu">{{are}}</view>
+    <image class='right' src="../../images/right.svg"></image>
+  </view>
+  <view>
+    <text>总数量（斤）</text>
+    <input type="digit" bindinput='totalAmountFn' placeholder-class="sr" placeholder='请输入' value="{{total_counts}}"></input>
+    <image class='right' src="../../images/right.svg"></image>
+  </view>
+  <view>
+    <text>起售量（斤）</text>
+    <input type="digit" bindinput='minAmountFn' placeholder-class="sr" placeholder='请输入' value="{{start_counts}}"></input>
+    <image class='right' src="../../images/right.svg"></image>
+  </view>
+  <view>
+    <text>供应价格（元/斤）</text>
+    <input type="digit" bindinput='priceFn' placeholder-class="sr" placeholder='如未输入，默认为面议' value="{{price}}"></input>
+    <image class='right' src="../../images/right.svg"></image>
+  </view>
+  <view>
+    <text>供货截止日期</text>
+    <picker mode="date" value="{{date}}" start="{{start}}" end="{{end}}" bindchange="supplyTimeFn">
+      <view class="sr">{{postData['deadline_time']?postData['deadline_time']:""}}</view>
+    </picker>
+    <image class='right' src="../../images/right.svg"></image>
+  </view>
+  <view>
+    <text>联系人</text>
+    <input type="text" bindinput="contactsFn" placeholder-class="sr" placeholder='请输入' value="{{contact}}"></input>
+    <image class='right' src="../../images/right.svg"></image>
+  </view>
+  <view>
+    <text>联系电话</text>
+    <input type="number" maxlength="11" bindinput="telephoneFn" placeholder-class="sr" placeholder='请输入11位手机号码' value='{{cellphone}}'></input>
+    <image class='right' src="../../images/right.svg"></image>
+  </view>
+  <view>
+    <text>商品详情</text>
+  </view>
+  <textarea class="l-detail" bindblur="bindTextAreaBlur" bindinput="detailFn" auto-height placeholder-class="sr" placeholder="请输入商品详情" value="{{content}}" />
+</view>
+<!-- 图片上传 -->
+<view class="line"></view>
+<block>
+  <view class="upfile">
+    <view>上传图片</view>
+    <block wx:for="{{upfileWx}}" wx:key="index">
+      <image data-s="0" lazy-load="true" catchtap="delImg" data-index="{{index}}" src="{{item}}" mode="aspectFill"></image>
+    </block>
+    <block wx:for="{{newfile}}" wx:key="index">
+      <image data-s="1" lazy-load="true" catchtap="delImg" data-index="{{index}}" src="{{item}}" mode="aspectFill"></image>
+    </block>
+    <image lazy-load="true" catchtap="chooseImage" mode="aspectFill" src="../../images/039.png"></image>
+  </view>
+</block>
+<!-- 供应类型 -->
+<block>
+  <view class='section-wrap' catchtouchmove="preventTouchMove" catchtap="makePhoneCall" hidden="{{hiddenFalg}}">
+    <view class="section" catchtap="stopMake" style="height: {{viewHeight}}px;">
+      <scroll-view catchtap="oneTag" scroll-y style="height: {{viewHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <block wx:for="{{treeOne}}" wx:key="index">
+          <view data-code="{{item.code}}" data-name="{{item.name}}" data-index="{{index}}" class="scroll-view-item bc_green {{active1 == index?'active':''}}">
+            {{item.name}}
+          </view>
+        </block>
+      </scroll-view>
+      <scroll-view catchtap="twoTag" scroll-y style="height: {{viewHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <block wx:for="{{treeTwo}}" wx:key="index">
+          <view wx:if="{{item.showName}}" data-hide="hide" data-code="{{item.code}}" data-index="{{index}}" data-name="{{item.name}}" class="scroll-view-item bc_green {{active2 == index?'active':''}}">
+            {{item.showName}}
+          </view>
+          <view wx:else data-name="{{item.name}}" data-code="{{item.code}}" data-index="{{index}}" class="scroll-view-item bc_green {{active2 == index?'active':''}}">
+            {{item.name}}
+          </view>
+        </block>
+      </scroll-view>
+      <scroll-view catchtap="threeTag" scroll-y style="height: {{viewHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <block wx:for="{{treeThree}}" wx:key="index">
+          <view wx:if="{{item.showName}}" data-hide="hide" data-code="{{item.code}}" data-index="{{index}}" data-name="{{item.name}}" class="scroll-view-item bc_green {{active3 == index?'active':''}}">
+            {{item.showName}}
+          </view>
+          <view wx:else data-name="{{item.name}}" data-code="{{item.code}}" data-index="{{index}}" class="scroll-view-item bc_green {{active3 == index?'active':''}}">
+            {{item.name}}
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</block>
+<button class="save" type="primary" bindtap="save">确认信息</button>

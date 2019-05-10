@@ -1,0 +1,146 @@
+<!-- index.wxml -->
+<!-- ffc43d 黄色 -->
+<!-- 1D9FE2 蓝色 -->
+<view id="j_page" class="container">
+  <view>
+    <block>
+      <view class="page-section page-section-spacing swiper">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+          <block wx:for="{{bannerList}}" wx:key="index">
+            <swiper-item>
+              <view class="swiper-item">
+                <image bindtap='tabLink' data-id="{{item.id}}" lazy-load="true" src="{{item.pic_url}}" mode="scaleToFill"></image>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <view class="{{content}}">
+        <block>
+          <view class="nav">
+            <view class="{{navActive ? 'navA' : ''}}" bindtap="gongying">
+              <text class="{{navActive ? 'navb' : ''}}">供应</text>
+            </view>
+            <view class="{{navActive ? '' : 'navA'}}" bindtap="qiugou">
+              <text class="{{navActive ? '' : 'navb'}}">求购</text>
+            </view>
+            <view class="navLine"></view>
+          </view>
+          <view class="select">
+            <view class="{{fl?'navAct':''}}" bindtap="fenlei">
+              {{flMsg}}
+              <image hidden="{{fl}}" src="../../images/shichang_down.png" mode="widthFix"></image>
+              <image hidden="{{!fl}}" src="../../images/shichang_up.png" mode="widthFix"></image>
+            </view>
+            <view class="{{dq?'navAct':''}}" bindtap="diqu">
+              {{dqMsg}}
+              <image hidden="{{dq}}" src="../../images/shichang_down.png" mode="widthFix"></image>
+              <image hidden="{{!dq}}" src="../../images/shichang_up.png" mode="widthFix"></image>
+            </view>
+            <view class="{{px?'navAct':''}}" bindtap="paixu">
+              {{pxMsg}}
+              <image hidden="{{px}}" src="../../images/shichang_down.png" mode="widthFix"></image>
+              <image hidden="{{!px}}" src="../../images/shichang_up.png" mode="widthFix"></image>
+            </view>
+          </view>
+          <view class='section-wrap'>
+            <view class="section" hidden="{{!viewHeight}}">
+              <scroll-view bindtap="oneTag" scroll-y style="height: {{viewHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+                <block wx:for="{{treeOne}}" wx:key="index">
+                  <view data-code="{{item.code}}" data-name="{{item.name}}" data-index="{{index}}" class="scroll-view-item bc_green {{active1 == index?'active':''}}">
+                    {{item.name}}
+                  </view>
+                </block>
+              </scroll-view>
+              <scroll-view bindtap="twoTag" scroll-y style="height: {{viewHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+                <block wx:for="{{treeTwo}}" wx:key="index">
+                  <view wx:if="{{item.showName}}" data-hide="hide" data-code="{{item.code}}" data-index="{{index}}" data-name="{{item.name}}" class="scroll-view-item bc_green {{active2 == index?'active':''}}">
+                    {{item.showName}}
+                  </view>
+                  <view wx:else data-name="{{item.name}}" data-code="{{item.code}}" data-index="{{index}}" class="scroll-view-item bc_green {{active2 == index?'active':''}}">
+                    {{item.name}}
+                  </view>
+                </block>
+              </scroll-view>
+              <scroll-view bindtap="threeTag" scroll-y style="height: {{viewHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+                <block wx:for="{{treeThree}}" wx:key="index">
+                  <view wx:if="{{item.showName}}" data-hide="hide" data-code="{{item.code}}" data-index="{{index}}" data-name="{{item.name}}" class="scroll-view-item bc_green {{active3 == index?'active':''}}">
+                    {{item.showName}}
+                  </view>
+                  <view wx:else data-name="{{item.name}}" data-code="{{item.code}}" data-index="{{index}}" class="scroll-view-item bc_green {{active3 == index?'active':''}}">
+                    {{item.name}}
+                  </view>
+                </block>
+              </scroll-view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <block wx:for="{{newList}}" wx:key="index">
+        <view class="newList {{newListFixed}}">
+          <image lazy-load="true" wx:if="{{item['is_recommend']==1&&item.status==0}}" class="flagStatus" src="../../images/t.png"></image>
+          <image lazy-load="true" wx:if="{{item.status==1}}" class="flagStatus" src="../../images/s.png"></image>
+          <view catchtap="onTouch" data-userid="{{item['user_id']}}" data-c="{{ item['supply_id']?'supply_id':'demand_id'}}" data-id="{{item['supply_id']?item['supply_id']:item['demand_id']}}">
+            <view class="userMsg">
+              <view class="userImg">
+                <image lazy-load="true" src="{{item.user_info?item.user_info.user_avatar:'../../images/logo.png'}}" mode="widthFix"></image>
+              </view>
+              <view class="username">
+                <view class="name">
+                  <view class="namel">{{item.user_info?item.user_info.nickname:'悦农通'}}</view>
+                </view>
+                <view class="address">
+                  <text>{{item.area_merger_name}}</text>
+                </view>
+              </view>
+            </view>
+            <view class="title">
+              <text>{{item.title}}</text>
+            </view>
+            <view class="detail">
+              <text>{{item.content}}</text>
+            </view>
+            <view class="imgFile">
+              <block wx:for="{{item.pic_list}}" wx:key="index">
+                <image lazy-load="true" src="{{item}}" mode="aspectFill"></image>
+              </block>
+            </view>
+          </view>
+          <view class="rddz">
+            <view class="time">{{item.time}}</view>
+            <view class="dz" data-index="{{index}}" data-userid="{{item['user_id']}}" data-id="{{item['supply_id']?item['supply_id']:item['demand_id']}}" data-is_like="{{item['is_like']}}" bindtap='shouCang'>
+              <image lazy-load="true" wx:if="{{item['is_like']}}" src="../../images/sc_pre.png" mode='widthFix'></image>
+              <image lazy-load="true" wx:else src="../../images/sc.png" mode='widthFix'></image>
+              <text>{{item.likes}}人收藏</text>
+            </view>
+            <view class="rd">
+              <image lazy-load="true" src="../../images/rd.png" mode='widthFix'></image>
+              <text>{{item.views}}人阅读</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+  </view>
+</view>
+<import src="../../template/footer/footer.wxml"></import>
+<template is="footer" data="{{...item}}" />
+<include src="../../template/fb/fb.wxml"></include>
+<block>
+  <view class="{{loginMask}}" catchtouchmove="preventTouchMove">
+    <view class="inner">
+      <view class='title'>请先登录</view>
+      <view class="detial">该功能需要登录才能使用</view>
+      <view class='btn'>
+        <button bindtap='hideMask'>取消</button>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">去登录</button>
+      </view>
+    </view>
+  </view>
+</block>
+<block>
+  <view bindtap='top' class="{{top}}">
+    <image lazy-load="true" src="../../images/top.png" mode="widthFix"></image>
+    <view>顶部</view>
+  </view>
+</block>

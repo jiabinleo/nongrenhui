@@ -1,0 +1,38 @@
+<view class="menu">
+  <view class="{{btn1}}" data-c="supply" data-a="mySupplyList" bindtap='gq'>
+    <text>供应信息</text>
+  </view>
+  <view class="{{btn2}}" data-c="demand" data-a="myDemandList" bindtap='gq'>
+    <text>求购信息</text>
+  </view>
+</view>
+<view class="list-wrap">
+  <block wx:for="{{pageRows}}" wx:key="index">
+    <view class="list" data-id="{{item['supply_id']?item['supply_id']:item['demand_id']}}" data-type="{{item['supply_id']?'supply':'demand'}}" catchtap="onTouch">
+      <view class="{{item.status==1?'listMask':''}}"></view>
+      <image lazy-load="true" src="../../images/s.png" class="{{item.status==1?'over':'overHide'}}" mode="widthFix"></image>
+      <view class="left">
+        <image wx:if="{{item.pic}}" lazy-load="true" src="{{item.pic}}" mode="aspectFill"></image>
+        <image wx:else lazy-load="true" src="../../images/loading.png" mode="aspectFill"></image>
+      </view>
+      <view class="center">
+        <view class="title">{{item.title}}</view>
+        <view class="detail">{{item.content}}</view>
+        <view class="areaTime">
+          <text>{{item.area_merger_name}}</text>
+          <text>{{item.add_time}}</text>
+        </view>
+      </view>
+      <view class='top' data-index="{{index}}" catchtap="over" data-type="{{item['supply_id']?'supply':'demand'}}" data-id="{{item['supply_id']?item['supply_id']:item['demand_id']}}">
+        <image lazy-load="true" wx:if="{{item.status==1}}" mode="widthFix" src=""></image>
+        <image lazy-load="true" wx:else mode="widthFix" src="../../images/s1.png"></image>
+        <text wx:if="{{item.status==1}}"></text>
+        <text wx:else>设为完成</text>
+      </view>
+      <view class='bottom' catchtap="delMsg" data-title="{{item.title}}" data-index="{{index}}" data-type="{{item['supply_id']?'supply':'demand'}}" data-id="{{item['supply_id']?item['supply_id']:item['demand_id']}}">
+        <image lazy-load="true" mode="widthFix" src="../../images/d.png"></image>
+        <text>永久删除</text>
+      </view>
+    </view>
+  </block>
+</view>

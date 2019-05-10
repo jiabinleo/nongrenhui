@@ -1,0 +1,22 @@
+<view class="list-wrap">
+  <block wx:for="{{pageRows}}" wx:key="index">
+    <view class="list"  data-c="{{ item.type}}" data-id="{{item.id}}" data-type="{{pageType}}" catchtap="onTouch">
+      <view class="left">
+        <!-- <image lazy-load="true" src="{{item.pic}}" mode="aspectFill"></image> -->
+        <image wx:if="{{item.pic}}" lazy-load="true" src="{{item.pic}}" mode="aspectFill"></image>
+        <image wx:else lazy-load="true" src="../../images/loading.png" mode="aspectFill"></image>
+      </view>
+      <view class="center">
+        <view class="title">{{item.title}}</view>
+        <view class="detail">{{item.content}}</view>
+        <view class="areaTime ">
+          <text>{{item.area}}</text>
+          <text>{{item.add_time}}</text>
+        </view>
+      </view>
+      <view class="right" catchtap="delMsg" data-title="{{item.title}}" data-index="{{index}}" data-type="{{item.type}}" data-id="{{item.id}}" data-detailId="{{item.detailId}}">
+        <image lazy-load="true" src="../../images/d.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </block>
+</view>
